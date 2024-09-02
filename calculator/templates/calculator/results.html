@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Water Usage Results</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'calculator/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Water Usage Results</h1>
+        <table border="1">
+            <tr>
+                <th>Activity</th>
+                <th>Liters Consumed</th>
+            </tr>
+            <tr>
+                <td>Number of People</td>
+                <td>{{ water_usage.num_people }}</td>
+            </tr>
+            <tr>
+                <td>Watering Plants</td>
+                <td>{{ water_usage.watering_plants }}</td>
+            </tr>
+            <tr>
+                <td>Washing Cars</td>
+                <td>{{ water_usage.washing_cars }}</td>
+            </tr>
+            <tr>
+                <td>Washing Utensils</td>
+                <td>{{ water_usage.washing_utensils }}</td>
+            </tr>
+            <tr>
+                <td>Washing Clothes</td>
+                <td>{{ water_usage.washing_clothes }}</td>
+            </tr>
+            <tr>
+                <td>Showering</td>
+                <td>{{ water_usage.showering }}</td>
+            </tr>
+            <tr>
+                <td>Cooking</td>
+                <td>{{ water_usage.cooking }}</td>
+            </tr>
+            <tr>
+                <td><strong>Total Usage</strong></td>
+                <td><strong>{{ total_water_usage }}</strong></td>
+            </tr>
+        </table>
+        {% if total_water_usage < 300 %}
+            <p style="color:green;">Congratulations! Your water usage is below the average limit of 300 liters.</p>
+        {% else %}
+            <p style="color:red;">Warning! Your water usage exceeds the average limit of 300 liters.</p>
+        {% endif %}
+    </div>
+    <a href="{% url 'index' %}" class="button">Back to Home</a>
+</body>
+</html>

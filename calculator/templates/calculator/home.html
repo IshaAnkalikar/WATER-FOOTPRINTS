@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Water Footprint Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'calculator/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Water Footprint Calculator</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.num_people.label_tag }} {{ form.num_people }}
+            </div>
+            <div class="form-group">
+                {{ form.watering_plants.label_tag }} {{ form.watering_plants }}
+            </div>
+            <div class="form-group">
+                {{ form.washing_cars.label_tag }} {{ form.washing_cars }}
+            </div>
+            <div class="form-group">
+                {{ form.washing_utensils.label_tag }} {{ form.washing_utensils }}
+            </div>
+            <div class="form-group">
+                {{ form.washing_clothes.label_tag }} {{ form.washing_clothes }}
+            </div>
+            <div class="form-group">
+                {{ form.showering.label_tag }} {{ form.showering }}
+            </div>
+            <div class="form-group">
+                {{ form.cooking.label_tag }} {{ form.cooking }}
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Water Conservation</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'calculator/styles.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'calculator/images/home-background.jpg' %}");
+            background-size: cover;
+            text-align: center;
+            padding-top: 50px;
+            color: #333;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-block;
+            text-align: left;
+        }
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .container2{
+            text-align: right;
+            background-color: rgba(87, 147, 154, 0.8);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container2">
+        <a href="{% url 'home' %}" class="button-link">Calculate</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{% url 'awareness' %}" class="button">Awareness Section</a>
+    </div>
+    <div class="container">
+        <h1>Save Water, Save Life</h1>
+        <p>Water is a precious resource, and it's essential to conserve it. Here are some tips to save water:</p>
+        <ul>
+            <li>Fix any leaks in your home.</li>
+            <li>Use water-saving fixtures and appliances.</li>
+            <li>Take shorter showers.</li>
+            <li>Turn off the tap while brushing your teeth.</li>
+            <li>Collect rainwater for watering plants.</li>
+        </ul>
+    </div>
+</body>
+</html>
